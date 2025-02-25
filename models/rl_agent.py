@@ -53,4 +53,20 @@ class RLAgent(gym.Env):
 
         return observation
 
-    def step(self, action) -> tuple[np.ndarray, float, bool, bool, dict]:
+
+
+def main():
+    # Crear una instancia del agente RL
+    agent = RLAgent()
+
+    # Iniciar el entorno de trading
+    env = TradingEnv()
+
+    # Ejecutar el agente en el entorno de trading
+    agent.train(env)
+
+    # Ejecutar el agente en el entorno de trading
+    agent.run(env)
+
+if __name__ == "__main__":
+    main()

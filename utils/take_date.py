@@ -79,11 +79,23 @@ def main():
 
     # Obtener datos de diferentes períodos
     #data_diario = fetcher.get_historical_data(interval='1d')
-    data_diario = fetcher.get_historical_data(
-        start_date=(datetime.now() - timedelta(days=60)).strftime('%Y-%m-%d'),
-        interval='1m'
-    )
+    # Iterar para acumular 10 años de datos en intervalos de 5 días
+    years = 2
+    days = 1
+    start_date = datetime.now() - timedelta(days=365*years)
+    end_date = start_date + timedelta(days=days)
+    data_diario = pd.DataFrame()
 
+    while start_date < datetime.now():
+        temp_data = fetcher.get_historical_data(
+            start_date=start_date,
+            end_date=end_date,
+            interval='1m'
+        )
+        data_diario = pd.concat([data_diario, temp_data])
+        start_date = end_date
+        end_date = start_date + timedelta(days=days)
+    
     # Añadir indicadores técnicos
     data_diario = fetcher.add_technical_indicators(data_diario)
 
@@ -94,6 +106,9 @@ def main():
     print("Número de secuencias de entrenamiento:", len(sequences))
     print("\nPrimeras filas de los datos procesados:")
     print(data_diario.head(-1))
+    
+    # Vamos a guardarlo en un csv para poder visualizarlo
+    data_diario.to_csv('data_diario.csv', index=True)
 
 
     return data_diario, sequences, targets
