@@ -44,12 +44,19 @@ python main.py
 
 1. Accedemos a nuestro perfil de github
 2. Vamos a la pestaña de codespaces
+
 ![Menu principañl](./img/menu.png)
+
 3. Vamos a dar al boton de nuevo codespace
+
 ![Nuevo codespace](./img/nuevo_codespace.png)
+
 4. Seleccionamos el repositorio
+
 ![Seleccionar repositorio](./img/selecion_de_repositorio.png)
+
 5. Deberiamos tener un menu parecido a este 
+
 ![Menu codespace](./img/menu_final.png)
 
 ## Contribuciones
