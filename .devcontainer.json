@@ -1,0 +1,7 @@
+{
+    "name": "Mi Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.11",
+    "postStartCommand": "scripts/on-start.sh",
+    "updateContentCommand": "scripts/on-stop.sh"
+    
+}
