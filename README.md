@@ -62,9 +62,6 @@ python main.py
 ## Contribuciones
 Cualquier contribucion es bienvenida, si quieres contribuir sigue los siguientes
 
-## Repo Activity
-![Alt](https://repobeats.axiom.co/api/embed/0a66b1ba98ac33ed683be56a16d1833f9c64ee29.svg "Repobeats analytics image")
-
 ## Autores
 - abueno19
 
