@@ -1,0 +1,24 @@
+{
+    "name": "Python 3.12 Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.12",
+    
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "dbaeumer.vscode-eslint",
+                "github.codespaces",
+                "github.copilot",
+                "github.copilot-chat",
+                "github.vscode-pull-request-github",
+                "ms-ceintl.vscode-language-pack-es",
+                "ms-python.autopep8",
+                "ms-python.debugpy"
+            ]
+
+        }
+    },
+    "postCreateCommand": "pip install --upgrade pip && scripts/on-start.sh",
+    
+}
